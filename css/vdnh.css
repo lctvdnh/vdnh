@@ -1,0 +1,357 @@
+@font-face {
+    font-family: 's';
+    src: url('https://vdnh.ru/local/templates/v3_new_header/fonts/SuisseIntl-Regular.woff2') format('woff2'),
+    url('https://vdnh.ru/local/templates/v3_new_header/fonts/SuisseIntl-Regular.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 's';
+    src: url('https://vdnh.ru/local/templates/v3_new_header/fonts/SuisseIntl-Regular.woff2') format('woff2'),
+    url('https://vdnh.ru/local/templates/v3_new_header/fonts/SuisseIntl-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+@font-face {
+    font-family: 's';
+    src: url('https://vdnh.ru/local/templates/v3_new_header/fonts/SuisseIntl-Italic.woff2') format('woff2'),
+    url('https://vdnh.ru/local/templates/v3_new_header/fonts/SuisseIntl-Italic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: 's';
+    src: url('https://vdnh.ru/local/templates/v3_new_header/fonts/SuisseIntl-Italic.woff2') format('woff2'),
+    url('https://vdnh.ru/local/templates/v3_new_header/fonts/SuisseIntl-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: 's';
+    src: url('https://vdnh.ru/local/templates/v3_new_header/fonts/SuisseIntl-MediumItalic.woff2') format('woff2'),
+    url('https://vdnh.ru/local/templates/v3_new_header/fonts/SuisseIntl-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face {
+    font-family: 's';
+    src: url('https://vdnh.ru/local/templates/v3_new_header/fonts/SuisseIntl-MediumItalic.woff2') format('woff2'),
+    url('https://vdnh.ru/local/templates/v3_new_header/fonts/SuisseIntl-MediumItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: 's';
+    src: url('https://vdnh.ru/local/templates/v3_new_header/fonts/SuisseIntl-Medium.woff2') format('woff2'),
+    url('https://vdnh.ru/local/templates/v3_new_header/fonts/SuisseIntl-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 's';
+    src: url('https://vdnh.ru/local/templates/v3_new_header/fonts/SuisseIntl-Medium.woff2') format('woff2'),
+    url('https://vdnh.ru/local/templates/v3_new_header/fonts/SuisseIntl-Medium.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 's';
+    src: url('https://vdnh.ru/local/templates/v3_new_header/fonts/SuisseIntl-Medium.woff2') format('woff2'),
+    url('https://vdnh.ru/local/templates/v3_new_header/fonts/SuisseIntl-Medium.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+
+@font-face {
+    font-family: 'vl2';
+    src: url('https://vdnh.ru/local/templates/v3_new_header/fonts/vdnhlebedev2-regular-webfont.woff2') format('woff2'),
+    url('https://vdnh.ru/local/templates/v3_new_header/fonts/vdnhlebedev2-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'vl2';
+    src: url('https://vdnh.ru/local/templates/v3_new_header/fonts/vdnhlebedev2-regular-webfont.woff2') format('woff2'),
+    url('https://vdnh.ru/local/templates/v3_new_header/fonts/vdnhlebedev2-regular-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'vl2-bold';
+    src: url('https://vdnh.ru/local/templates/v3_new_header/fonts/vdnhlebedev2-bold-webfont.woff2') format('woff2'),
+    url('https://vdnh.ru/local/templates/v3_new_header/fonts/vdnhlebedev2-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Suisse Intl';
+    src: url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-BLACK.eot');
+    src: local('Suisse Intl'), local('SUISSEINTL-BLACK'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-BLACK.woff') format('woff'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-BLACK.ttf') format('truetype'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-BLACK.svg') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Suisse Intl';
+    src: url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-BLACKITALIC.eot');
+    src: local('Suisse Intl'), local('SUISSEINTL-BLACKITALIC'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-BLACKITALIC.woff') format('woff'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-BLACKITALIC.ttf') format('truetype'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-BLACKITALIC.svg') format('svg');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Suisse Intl';
+    src: url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-BOOK.eot');
+    src: local('Suisse Intl'), local('SUISSEINTL-BOOK'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-BOOK.woff') format('woff'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-BOOK.ttf') format('truetype'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-BOOK.svg') format('svg');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Suisse Intl';
+    src: url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-BOOKITALIC.eot');
+    src: local('Suisse Intl'), local('SUISSEINTL-BOOKITALIC'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-BOOKITALIC.woff') format('woff'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-BOOKITALIC.ttf') format('truetype'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-BOOKITALIC.svg') format('svg');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Suisse Intl';
+    src: url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-BOLD.eot');
+    src: local('Suisse Intl'), local('SUISSEINTL-BOLD'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-BOLD.woff') format('woff'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-BOLD.ttf') format('truetype'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-BOLD.svg') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Suisse Intl';
+    src: url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-BOLDITALIC.eot');
+    src: local('Suisse Intl'), local('SUISSEINTL-BOLDITALIC'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-BOLDITALIC.woff') format('woff'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-BOLDITALIC.ttf') format('truetype'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-BOLDITALIC.svg') format('svg');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Suisse Intl';
+    src: url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-SEMIBOLD.eot');
+    src: local('Suisse Intl'), local('SUISSEINTL-SEMIBOLD'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-SEMIBOLD.woff') format('woff'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-SEMIBOLD.ttf') format('truetype'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-SEMIBOLD.svg') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Suisse Intl';
+    src: url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-SEMIBOLDITALIC.eot');
+    src: local('Suisse Intl'), local('SUISSEINTL-SEMIBOLDITALIC'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-SEMIBOLDITALIC.woff') format('woff'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-SEMIBOLDITALIC.ttf') format('truetype'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-SEMIBOLDITALIC.svg') format('svg');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Suisse Intl';
+    src: url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-MEDIUM.eot');
+    src: local('Suisse Intl'), local('SUISSEINTL-MEDIUM'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-MEDIUM.woff') format('woff'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-MEDIUM.ttf') format('truetype'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-MEDIUM.svg') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Suisse Intl';
+    src: url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-MEDIUMITALIC.eot');
+    src: local('Suisse Intl'), local('SUISSEINTL-MEDIUMITALIC'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-MEDIUMITALIC.woff') format('woff'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-MEDIUMITALIC.ttf') format('truetype'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-MEDIUMITALIC.svg') format('svg');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Suisse Intl';
+    src: url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-REGULAR.eot');
+    src: local('Suisse Intl'), local('SUISSEINTL-REGULAR'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-REGULAR.woff') format('woff'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-REGULAR.ttf') format('truetype'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-REGULAR.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Suisse Intl';
+    src: url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-REGULARITALIC.eot');
+    src: local('Suisse Intl'), local('SUISSEINTL-REGULARITALIC'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-REGULARITALIC.woff') format('woff'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-REGULARITALIC.ttf') format('truetype'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-REGULARITALIC.svg') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Suisse Intl';
+    src: url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-LIGHT.eot');
+    src: local('Suisse Intl'), local('SUISSEINTL-LIGHT'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-LIGHT.woff') format('woff'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-LIGHT.ttf') format('truetype'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-LIGHT.svg') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Suisse Intl';
+    src: url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-LIGHTITALIC.eot');
+    src: local('Suisse Intl'), local('SUISSEINTL-LIGHTITALIC'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-LIGHTITALIC.woff') format('woff'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-LIGHTITALIC.ttf') format('truetype'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-LIGHTITALIC.svg') format('svg');
+    font-weight: 300;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: 'Suisse Intl';
+    src: url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-THIN.eot');
+    src: local('Suisse Intl'), local('SUISSEINTL-THIN'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-THIN.woff') format('woff'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-THIN.ttf') format('truetype'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-THIN.svg') format('svg');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Suisse Intl';
+    src: url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-THINITALIC.eot');
+    src: local('Suisse Intl'), local('SUISSEINTL-THINITALIC'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-THINITALIC.woff') format('woff'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-THINITALIC.ttf') format('truetype'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-THINITALIC.svg') format('svg');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Suisse Intl';
+    src: url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-ULTRALIGHT.eot');
+    src: local('Suisse Intl'), local('SUISSEINTL-ULTRALIGHT'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-ULTRALIGHT.woff') format('woff'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-ULTRALIGHT.ttf') format('truetype'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-ULTRALIGHT.svg') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Suisse Intl';
+    src: url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-ULTRALIGHTITALIC.eot');
+    src: local('Suisse Intl'), local('SUISSEINTL-ULTRALIGHTITALIC'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-ULTRALIGHTITALIC.woff') format('woff'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-ULTRALIGHTITALIC.ttf') format('truetype'),
+     url('https://vdnh.ru/local/templates/v3_new_header/fonts/SUISSEINTL-ULTRALIGHTITALIC.svg') format('svg');
+    font-weight: 100;
+    font-style: italic;
+}
+body, html {
+    background: #fff;
+    color: #262626;
+    font-family: 's', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 28px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-variant-numeric: proportional-nums;
+}
+
+h1, .h1 {
+    display: block;
+    font-family: 'vl2', sans-serif;
+    /* text-transform: lowercase; */
+    font-weight: normal;
+    margin: 1em 0 .5em 0;
+    font-size: 84px;
+    line-height: 72px;
+    letter-spacing: -2px;
+}
+.title {
+    display: block;
+    font-family: 'vl2', sans-serif;
+    /* text-transform: lowercase; */
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 40px;
+    margin: 1em 0 .5em 0;
+}
+h2, h3, .detail-text h1 {
+    letter-spacing: 0;
+    text-transform: none;
+    font-family: 's', sans-serif;
+    display: block;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    margin: 30px 0 15px 0;
+}
+
+
+a {
+	cursor: pointer;
+    color: #262626;
+	text-decoration: none;
+}
+a:hover {
+	color: #E22C38;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    padding: 0;
+    margin: 20px;
+}

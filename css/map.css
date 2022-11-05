@@ -1,0 +1,16 @@
+.leaflet-routing-alternatives-container {
+	display: none;
+}
+.leaflet-routing-geocoders input {
+	width: calc(100% - 15px) !important;
+}
+html, body {
+	height: 100%;
+}
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+a:hover {
+	text-decoration: underline;
+}
