@@ -76,7 +76,12 @@ function page_loaded() {
 	map.on('locationfound',leaflet_location_found);
 
 	if (typeof POINT !== 'undefined') {
-		route_from_me();
+		var point_route_options = {
+			enableHighAccuracy: true,
+			timeout: 30000,
+			maximumAge: 0
+		};
+		navigator.geolocation.getCurrentPosition(point_route_success, point_route_error, point_route_options);
 	}
 
 	if (FILE_ALL==='places') {
@@ -95,62 +100,6 @@ function page_loaded() {
 	map.on("click", map_onclick);
 	map.on("mousedown", coordinates_to_navigator);
 }
-
-function route_from_me() {
-	var point_route_options = {
-		enableHighAccuracy: true,
-		timeout: 30000,
-		maximumAge: 0
-	};
-	navigator.geolocation.getCurrentPosition(point_route_success, point_route_error, point_route_options);
-}
-
-
-function go_point(point, marker_n) {
-	POINT=point;
-	var point_route_options = {
-		enableHighAccuracy: true,
-		timeout: 30000,
-		maximumAge: 0
-	};
-	navigator.geolocation.getCurrentPosition(point_route_success, go_here_error, point_route_options);
-	GO_HERE_MARKER_N=marker_n;
-}
-
-
-function go_here(point, marker_n) {
-	POINT=point;
-	var point_route_options = {
-		enableHighAccuracy: true,
-		timeout: 30000,
-		maximumAge: 0
-	};
-	navigator.geolocation.getCurrentPosition(go_here_success, go_here_error, point_route_options);
-	GO_HERE_MARKER_N=marker_n;
-}
-
-function go_here_success(pos) {
-	popup_content_for_marker=[false,popup_html(POINT)];
-	var coords = pos.coords;
-	let lat=coords.latitude;
-	let lon=coords.longitude;
-	var wps=routingControl.getWaypoints();
-	if (GO_HERE_MARKER_N>1) {
-		wps[wps.length]=[lat,lon];
-	} else {
-		wps.unshift([lat,lon]);
-	}
-	
-	let oldValue=routingControl.options.fitSelectedRoutes;
-	routingControl.options.fitSelectedRoutes=true;
-	routingControl.setWaypoints(wps);
-	routingControl.options.fitSelectedRoutes=oldValue;
-}
-
-function go_here_error(err) {
-	alert(err.message);
-}
-
 
 function coordinates_to_navigator(e) {
 	var el = document.activeElement;
@@ -378,18 +327,6 @@ function heatmap() {
 			continue;
 		}
 		color='#0000E8';
-		/*
-		let rating=HEATMAP[id]/991924;
-		if (rating>0.07) {color='#880404';}
-		else if (rating>0.06) {color='#E50000';}
-		else if (rating>0.07) {color='#FF6000';}
-		else if (rating>0.06) {color='#FFC100';}
-		else if (rating>0.05) {color='#D2FF24';}
-		else if (rating>0.04) {color='#7EFF78';}
-		else if (rating>0.03) {color='#23FFD3';}
-		else if (rating>0.02) {color='#00AEFF';}
-		else if (rating>0.01) {color='#0048FF';}
-		*/
 		let visitors=HEATMAP[id];
 		if (visitors>90000) {color='#880404';}
 		else if (visitors>80000) {color='#E50000';}
@@ -513,4 +450,48 @@ function geocoder_placeholder_default(n,count) {
 		return 'Куда';
 	}
 	return 'Остановка '+(n);
+}
+
+function go_point(point, marker_n) {
+	POINT=point;
+	var point_route_options = {
+		enableHighAccuracy: true,
+		timeout: 30000,
+		maximumAge: 0
+	};
+	navigator.geolocation.getCurrentPosition(point_route_success, go_here_error, point_route_options);
+	GO_HERE_MARKER_N=marker_n;
+}
+
+function go_here(point, marker_n) {
+	POINT=point;
+	var point_route_options = {
+		enableHighAccuracy: true,
+		timeout: 30000,
+		maximumAge: 0
+	};
+	navigator.geolocation.getCurrentPosition(go_here_success, go_here_error, point_route_options);
+	GO_HERE_MARKER_N=marker_n;
+}
+
+function go_here_success(pos) {
+	popup_content_for_marker=[false,popup_html(POINT)];
+	var coords = pos.coords;
+	let lat=coords.latitude;
+	let lon=coords.longitude;
+	var wps=routingControl.getWaypoints();
+	if (GO_HERE_MARKER_N>1) {
+		wps[wps.length]=[lat,lon];
+	} else {
+		wps.unshift([lat,lon]);
+	}
+	
+	let oldValue=routingControl.options.fitSelectedRoutes;
+	routingControl.options.fitSelectedRoutes=true;
+	routingControl.setWaypoints(wps);
+	routingControl.options.fitSelectedRoutes=oldValue;
+}
+
+function go_here_error(err) {
+	alert(err.message);
 }
