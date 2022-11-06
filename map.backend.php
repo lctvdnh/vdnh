@@ -78,6 +78,7 @@ if ($input_points!='') {
 	vdnh_coordinates_load('places');
 	$points_exp=explode(';',$input_points);
 	$WAY_POINTS=[];
+	$marker_n=0;
 	foreach($points_exp as $point) {
 		$vdnh_coord=$VDNH_COORDINATES[$point]??null;
 		if (isset($vdnh_coord) && isset($vdnh_coord->lat) && isset($vdnh_coord->lon)) {
@@ -102,6 +103,8 @@ if ($input_points!='') {
 			if(strlen($tickets_link)>5) {
 				$popup.="<a href=\'$tickets_link\' target=\'_blank\'>купить билеты</a><br>";
 			}
+			
+			$popup.="<a nohref onclick=\'go_here(".$vdnh_coord->array_name."[".$vdnh_coord->array_num."],".($marker_n++).")\'>проложить маршрут</a><br>";
 				
 			$point="{lat:$lat,lon:$lon,popup:'$popup'}";
 		} else {
@@ -117,8 +120,11 @@ if ($input_points!='') {
 function vdnh_coordinates_load($type) {
 	global $VDNH_COORDINATES;
 	$file=json_decode(file_get_contents('./data/'.$type.'.json'));
+	$n=0;
 	foreach($file as $line) {
 		if (isset($line->id)) {
+			$line->array_name=strtoupper($type);
+			$line->array_num=$n++;
 			$VDNH_COORDINATES[$line->id]=$line;
 		}
 	}

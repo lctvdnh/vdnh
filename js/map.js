@@ -76,12 +76,7 @@ function page_loaded() {
 	map.on('locationfound',leaflet_location_found);
 
 	if (typeof POINT !== 'undefined') {
-		var point_route_options = {
-			enableHighAccuracy: true,
-			timeout: 5000,
-			maximumAge: 0
-		};
-		navigator.geolocation.getCurrentPosition(point_route_success, point_route_error, point_route_options);
+		route_from_me();
 	}
 
 	if (FILE_ALL==='places') {
@@ -100,6 +95,62 @@ function page_loaded() {
 	map.on("click", map_onclick);
 	map.on("mousedown", coordinates_to_navigator);
 }
+
+function route_from_me() {
+	var point_route_options = {
+		enableHighAccuracy: true,
+		timeout: 30000,
+		maximumAge: 0
+	};
+	navigator.geolocation.getCurrentPosition(point_route_success, point_route_error, point_route_options);
+}
+
+
+function go_point(point, marker_n) {
+	POINT=point;
+	var point_route_options = {
+		enableHighAccuracy: true,
+		timeout: 30000,
+		maximumAge: 0
+	};
+	navigator.geolocation.getCurrentPosition(point_route_success, go_here_error, point_route_options);
+	GO_HERE_MARKER_N=marker_n;
+}
+
+
+function go_here(point, marker_n) {
+	POINT=point;
+	var point_route_options = {
+		enableHighAccuracy: true,
+		timeout: 30000,
+		maximumAge: 0
+	};
+	navigator.geolocation.getCurrentPosition(go_here_success, go_here_error, point_route_options);
+	GO_HERE_MARKER_N=marker_n;
+}
+
+function go_here_success(pos) {
+	popup_content_for_marker=[false,popup_html(POINT)];
+	var coords = pos.coords;
+	let lat=coords.latitude;
+	let lon=coords.longitude;
+	var wps=routingControl.getWaypoints();
+	if (GO_HERE_MARKER_N>1) {
+		wps[wps.length]=[lat,lon];
+	} else {
+		wps.unshift([lat,lon]);
+	}
+	
+	let oldValue=routingControl.options.fitSelectedRoutes;
+	routingControl.options.fitSelectedRoutes=true;
+	routingControl.setWaypoints(wps);
+	routingControl.options.fitSelectedRoutes=oldValue;
+}
+
+function go_here_error(err) {
+	alert(err.message);
+}
+
 
 function coordinates_to_navigator(e) {
 	var el = document.activeElement;
@@ -182,14 +233,14 @@ function show_all_points(points) {
 		if (!row.lon || !row.lat) {
 			continue;
 		}
-		let html=popup_html(row);
+		let html=popup_html(row, i);
 		markers[row.id]=L.marker([row.lat,row.lon]).bindPopup(html,{autoPan:false});//.addTo(map);
 		markersCluster.addLayer(markers[row.id]);
 	}
 	map.addLayer(markersCluster);
 }
 
-function popup_html(row) {
+function popup_html(row,array_num=null) {
 	let html='';
 	html+=row.type+'<br>\n';
 	html+=row.title+'<br>\n';
@@ -204,6 +255,9 @@ function popup_html(row) {
 	}
 	if (row.tickets_link && row.tickets_link.length>5) {
 		html+='<a href="'+row.tickets_link+'" target="_blank">купить билеты</a><br>\n';
+	}
+	if (array_num!==null) {
+		html+='<a nohref onclick="go_point('+FILE_ALL.toUpperCase()+'['+array_num+'],0)" >проложить маршрурт</a><br>\n';
 	}
 	return html;
 }
