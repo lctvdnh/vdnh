@@ -10,20 +10,25 @@ if ($_POST['type']=='events') {
 $filter_tags=$_POST['tags']??'';
 $filter_tags=empty($filter_tags)?false:explode("|",$filter_tags);
 $filter_free=isset($_POST['free'])?true:false;
-$filter_inside=isset($_POST['inside'])?true:false;
+$filter_inside=$_POST['inside']??'';
 
 foreach($list as $k=> $row) {
 	if ($filter_free && !$row['free']) {
 		unset($list[$k]);
 	}
-	if ($filter_inside && !$row['inside']) {
+	if ($filter_inside=='in' && !$row['inside']) {
+		unset($list[$k]);
+	}
+	if ($filter_inside=='out' && $row['inside']) {
 		unset($list[$k]);
 	}
 	if ($filter_tags && !in_array($row['tag'],$filter_tags)) {
 		unset($list[$k]);
 	}
 }
+
 $list=array_values($list);
+usort($list,'cmp');
 
 $routes=[];
 $n=0;

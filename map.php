@@ -50,7 +50,7 @@ include_once('map.backend.php');
 				let ROUTE_JSON=JSON.parse('<?=str_replace("\\", "\\\\", json_encode($ROUTE_JSON))?>');
 			<?}?>
 			<?if (isset($HEATMAP)) {?>
-				let HEATMAP=true;
+				let HEATMAP=<?=$HEATMAP?>;
 			<?}?>
 			let FILE_ALL='<?=$FILE_ALL?>';
 			var default_waipoints=[<?=$WAY_POINTS??''?>];

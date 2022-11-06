@@ -19,7 +19,13 @@ include_once('questions.backend.php')
 			<option value='events'>Посетить мероприятие</option>
 		</select><br>
 		<label><input type='checkbox' name='free' value='1'>Бесплатно</label><br>
-		<label><input type='checkbox' name='inside' value='1'>Внутри помещения</label><br>
+
+		<select id='select_type' name='inside' onchange='type_onchange(this)' style="margin: 10px 0px; font-size: 18px; font-family: 's', sans-serif; padding: 5px; border: 1px solid #808080; border-radius: 5px;">
+			<option value='out'>Больше времени на улице</option>
+			<option value='in'>Больше времени в помещении</option>
+			<option value=''>Без разницы</option>
+		</select><br>
+
 		<input type=hidden id='hidden_tags'name='tags'>
 	<div style='line-height: 35px; max-width: 500px; margin-top: 10px;'>
 	<?foreach($tags as $tag=>$v){?>

@@ -29,7 +29,20 @@ if (isset($_GET['all']) && in_array($_GET['all'],['events','places'])) {
 }
 
 if (isset($_GET['heatmap'])) {
-	$HEATMAP=true;
+	$file_places=file('./data/places_tags.tsv');
+	foreach($file_places as $row) {
+		$e=explode('	',trim($row));
+		if (count($e)!=9) {
+			continue;
+		}
+		$id=trim($e[0]);
+		$visitors=trim($e[4]);
+		if (empty($id) || empty($visitors)) {
+			continue;
+		}
+		$heatmap[$id]=$visitors;
+	}
+	$HEATMAP=json_encode($heatmap);
 }
 
 $route=$_GET['route']??'';
@@ -67,7 +80,7 @@ if ($input_points!='') {
 	$WAY_POINTS=[];
 	foreach($points_exp as $point) {
 		$vdnh_coord=$VDNH_COORDINATES[$point]??null;
-		if (isset($vdnh_coord)) {
+		if (isset($vdnh_coord) && isset($vdnh_coord->lat) && isset($vdnh_coord->lon)) {
 			$lat=$vdnh_coord->lat;
 			$lon=$vdnh_coord->lon;
 			$popup='';
@@ -91,6 +104,10 @@ if ($input_points!='') {
 			}
 				
 			$point="{lat:$lat,lon:$lon,popup:'$popup'}";
+		} else {
+			if (is_numeric($point)) {
+				continue;
+			}
 		}
 		$WAY_POINTS[]=$point;
 	}

@@ -16,7 +16,7 @@ function page_loaded() {
 
 	L.control.zoom().setPosition('topright').addTo(map);
 	L.Routing.Localization='ru';
-	var router=new L.Routing.OSRMv1({geometryOnly: true});
+	var router=new L.Routing.OSRMv1({geometryOnly: true, profile: 'foot'});
 	routingControl = L.Routing.control({
 		fitSelectedRoutes: false,
 		router: router,
@@ -102,9 +102,9 @@ function page_loaded() {
 }
 
 function coordinates_to_navigator(e) {
-	var curElement = document.activeElement;
-	if (curElement.tagName=='INPUT' && curElement.parentElement.classList.contains('leaflet-routing-geocoder') && curElement.value=='') {
-		var n=geocoder_n_by_input(curElement);
+	var el = document.activeElement;
+	if (el.tagName=='INPUT' && el.parentElement.classList.contains('leaflet-routing-geocoder') && el.value=='') {
+		var n=geocoder_n_by_input(el);
 		var lon=e.latlng.lng;
 		var lat=e.latlng.lat;
 		waypoint_update(n,lon,lat);
@@ -319,20 +319,36 @@ function schedule(el) {
 function heatmap() {
 	for(let i=0;i<PLACES.length;i++) {
 		let place=PLACES[i];
-		color='#0000ff';
-		let rating=Math.random()*10;
-		if (rating>9) {color='#ff8000';}
-		else if (rating>8) {color='#ff6000';}
-		else if (rating>7) {color='#ff4000';}
-		else if (rating>6) {color='#ff2000';}
-		else if (rating>7) {color='#ff0000';}
-		else if (rating>6) {color='#f00010';}
-		else if (rating>5) {color='#e00020';}
-		else if (rating>4) {color='#d00030';}
-		else if (rating>3) {color='#c00040';}
-		else if (rating>2) {color='#800080';}
-		else if (rating>1) {color='#4000c0';}
-		L.circleMarker([place.lat, place.lon],{radius: 5, color: color}).bindPopup(place.title).addTo(map);
+		let id=place.id;
+		if (!(id in HEATMAP)) {
+			continue;
+		}
+		color='#0000E8';
+		/*
+		let rating=HEATMAP[id]/991924;
+		if (rating>0.07) {color='#880404';}
+		else if (rating>0.06) {color='#E50000';}
+		else if (rating>0.07) {color='#FF6000';}
+		else if (rating>0.06) {color='#FFC100';}
+		else if (rating>0.05) {color='#D2FF24';}
+		else if (rating>0.04) {color='#7EFF78';}
+		else if (rating>0.03) {color='#23FFD3';}
+		else if (rating>0.02) {color='#00AEFF';}
+		else if (rating>0.01) {color='#0048FF';}
+		*/
+		let visitors=HEATMAP[id];
+		if (visitors>90000) {color='#880404';}
+		else if (visitors>80000) {color='#E50000';}
+		else if (visitors>70000) {color='#FF6000';}
+		else if (visitors>60000) {color='#FFC100';}
+		else if (visitors>50000) {color='#D2FF24';}
+		else if (visitors>40000) {color='#7EFF78';}
+		else if (visitors>30000) {color='#23FFD3';}
+		else if (visitors>20000) {color='#00AEFF';}
+		else if (visitors>10000) {color='#0048FF';}
+		visitors=Math.round(visitors/100)/10;
+		let label='<div style="text-align: center">'+place.title+'<br>'+visitors+' тыс.чел.</div>';
+		L.circleMarker([place.lat, place.lon],{radius: 5, color: color, fillOpacity: 0.75}).bindTooltip(label,{direction: 'bottom'}).addTo(map);
 	}
 }
 
