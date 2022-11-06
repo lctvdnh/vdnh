@@ -11,7 +11,7 @@ include_once('typical.backend.php')
 		<script src="./js/typical.js"></script>
 	</head>
 	<body>
-	Теги:
+	Выберите свои интересы по тегам:
 	<div style="line-height: 30px;">
 	<?foreach($TAGS as $tag){?>
 		<span class="tag" onclick="tag_onclick(this)"><?=$tag?></span> 
@@ -19,7 +19,7 @@ include_once('typical.backend.php')
 	</div>
 	<div style='margin-top: 20px;'>
 		<div id='msg_select_tags' style='display: block; color: #a0a0a0'>
-			Выберите теги
+			Выберите свои интересы по тегам
 		</div>
 		<?foreach($ROUTES as $title => $info){?>
 			<div class='route' data-route='<?=$title?>' style='display: none'>
