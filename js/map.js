@@ -339,7 +339,7 @@ function heatmap() {
 		else if (visitors>10000) {color='#0048FF';}
 		visitors=Math.round(visitors/100)/10;
 		let label='<div style="text-align: center">'+place.title+'<br>'+visitors+' тыс.чел.</div>';
-		L.circleMarker([place.lat, place.lon],{radius: 5, color: color, fillOpacity: 0.75}).bindTooltip(label,{direction: 'bottom'}).addTo(map);
+		L.circleMarker([place.lat, place.lon],{radius: 7, color: color, fillOpacity: 0.75}).bindTooltip(label,{direction: 'bottom'}).addTo(map);
 	}
 }
 
