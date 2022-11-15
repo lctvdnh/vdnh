@@ -22,6 +22,23 @@ if (isset($_GET['point'])) {
 	$POINT=$points_by_id[$_GET['point']]??null;
 }
 
+$TILES_URL_LIST=[];
+$TILES_URL_LIST['osm']=['https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'];
+$TILES_URL_LIST['2gis']=['https://tile2.maps.2gis.com/tiles?x={x}&y={y}&z={z}&v=1&ts=online_sd'];
+$TILES_URL_LIST['streets-v11']=['https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZ2FsaTE5IiwiYSI6ImNsYWgxbW9kNjA1em0zcW1waHRnM2tudmgifQ.dvEFnHoQAluAnNLLvaOqaA'];
+$TILES_URL_LIST['outdoors-v11']=['https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZ2FsaTE5IiwiYSI6ImNsYWgxbW9kNjA1em0zcW1waHRnM2tudmgifQ.dvEFnHoQAluAnNLLvaOqaA'];
+$TILES_URL_LIST['light-v10']=['https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZ2FsaTE5IiwiYSI6ImNsYWgxbW9kNjA1em0zcW1waHRnM2tudmgifQ.dvEFnHoQAluAnNLLvaOqaA'];
+$TILES_URL_LIST['dark-v10']=['https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZ2FsaTE5IiwiYSI6ImNsYWgxbW9kNjA1em0zcW1waHRnM2tudmgifQ.dvEFnHoQAluAnNLLvaOqaA'];
+$TILES_URL_LIST['satellite-streets-v11']=['https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v11/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZ2FsaTE5IiwiYSI6ImNsYWgxbW9kNjA1em0zcW1waHRnM2tudmgifQ.dvEFnHoQAluAnNLLvaOqaA'];
+$TILES_URL_LIST['navigation-day-v1']=['https://api.mapbox.com/styles/v1/mapbox/navigation-day-v1/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZ2FsaTE5IiwiYSI6ImNsYWgxbW9kNjA1em0zcW1waHRnM2tudmgifQ.dvEFnHoQAluAnNLLvaOqaA'];
+$TILES_URL_LIST['navigation-night-v1']=['https://api.mapbox.com/styles/v1/mapbox/navigation-night-v1/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZ2FsaTE5IiwiYSI6ImNsYWgxbW9kNjA1em0zcW1waHRnM2tudmgifQ.dvEFnHoQAluAnNLLvaOqaA'];
+$TILES_URL_LIST['cyclosm']=['https://c.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png'];
+$TILES_URL_LIST['opnvkarte']=['https://tileserver.memomaps.de/tilegen/{z}/{x}/{y}.png'];
+$TILES_URL_LIST['human']=['https://tile-a.openstreetmap.fr/hot/{z}/{x}/{y}.png'];
+$MAP_STYLE='osm';
+if (isset($_GET['style']) && key_exists($_GET['style'],$TILES_URL_LIST)) {
+	$MAP_STYLE=$_GET['style'];
+}
 
 $FILE_ALL='';
 if (isset($_GET['all']) && in_array($_GET['all'],['events','places'])) {
