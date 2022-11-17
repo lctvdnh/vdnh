@@ -41,7 +41,7 @@ include_once('map.backend.php');
 	</head>
 	<body style='margin: 0px'>
 		<div id="map" style="width: 100%; height: 100vh; z-index: 0;">
-			<div style="display: inline-block; position: absolute; right: 100px; top: 5px; z-index: 1000;">
+			<div style="display: inline-block; position: absolute; right: 60px; top: 10px; z-index: 1000;">
 				<select id='select_style' onchange="change_styles()" style="font-size: 16px; font-weight: bolder; padding: 5px;">
 					<?foreach($TILES_URL_LIST as $style=>$tiles_info) {?>
 					<option value='<?=$style?>' <?if ($style===$MAP_STYLE){?> selected <?}?>>стиль <?=$tiles_info[1]??$style?></option>

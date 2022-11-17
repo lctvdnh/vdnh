@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="./css/vdnh.css">
 	</head>
 	<body>
+		<a href="https://sites.google.com/view/vdnhrokot/%D0%BA%D0%B0%D1%80%D1%82%D0%B0-%D0%B2%D0%B4%D0%BD%D1%85" target="_parent" style='color: #E22C38'>Web сайт решения</a><br>
 		<a href="./questions.php">Составить маршрут по анкете</a><br>
 		<a href="./points.php">Проложить маршрут до события или мероприятия</a><br>
 		<a href="./typical.php">Поиск маршрута по тегам</a><br>

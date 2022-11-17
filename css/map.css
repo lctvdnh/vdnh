@@ -14,3 +14,15 @@ a {
 a:hover {
 	text-decoration: underline;
 }
+
+@media only screen and (max-width: 650px) {
+	.leaflet-left.leaflet-top {
+		top: 50px;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	#select_style {
+		width: calc(100vw - 75px);
+	}
+}
